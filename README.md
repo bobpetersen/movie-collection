@@ -7,7 +7,8 @@ Angular Extended Weekend Project
 [X] create table for genre [ genre_movie]
 [X] add above SQL queries to readme
 [X] create server, public folder, add vendor JS files        and serve up static HTML file
-[ ] create HTML form for submitting a movie
+[X] create HTML form for submitting a movie
+[ ] create app controller
 [ ] create POST route for submitting movies - will include SQL INSERT query
 [ ] create a GET route that returns all movies
 [ ] display movies on the DOM in an HTML table
