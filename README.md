@@ -5,8 +5,8 @@ Angular Extended Weekend Project
 [X] create database = movie collection
 [X] create table for movies [ name, release_date, image_url]
 [X] create table for genre [ genre_movie]
-[X] create server folder and files
 [X] add above SQL queries to readme
+[X] create server, public folder, add vendor JS files        and serve up static HTML file
 [ ] create HTML form for submitting a movie
 [ ] create POST route for submitting movies - will include SQL INSERT query
 [ ] create a GET route that returns all movies
