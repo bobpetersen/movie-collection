@@ -1,9 +1,9 @@
 app.controller('GenreController', ['MovieService', '$mdDialog', '$http', function (GenreService, $mdDialog, $http) {
     console.log('GenreController has been loaded');
     const self = this;
-      self.genre = {
-          list: []
-      };
+    self.genre = {
+        list: []
+    };
 
     self.addGenre = function (genreAdd) {
         console.log('addGenre', genreAdd);
@@ -19,18 +19,30 @@ app.controller('GenreController', ['MovieService', '$mdDialog', '$http', functio
             alert('Something went wrong! Check the server.');
         });
     };
-      self.getGenre = function () {
-          $http({
-                  method: 'GET',
-                  url: '/genre'
-              }).then((response) => {
-                  console.log('response', response);
-                  self.genre.list = response.data;
-              })
-              .catch((error) => {
-                  console.log('error making genre GET', error);
-                  alert('Something went wrong! Check the server.');
-              });
-      }
-      self.getGenre();
+    self.getGenre = function () {
+        $http({
+                method: 'GET',
+                url: '/genre'
+            }).then((response) => {
+                console.log('response', response);
+                self.genre.list = response.data;
+            })
+            .catch((error) => {
+                console.log('error making genre GET', error);
+                alert('Something went wrong! Check the server.');
+            });
+    }
+    self.deleteGenre = function (genre_id) {
+        $http({
+            method: 'DELETE',
+            url: `/genre/${genre_id}`
+        }).then((response) => {
+            self.getGenre();
+            alert('Success!');
+        }).catch((error) => {
+            console.log('error making genre DELETE request', error);
+            alert('Something went wrong! Check the server.');
+        });
+    }
+    self.getGenre();
 }]);
