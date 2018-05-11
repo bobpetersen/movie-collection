@@ -1,0 +1,45 @@
+<h2>
+  Movies</h2>
+<!-- {{vm}} -->
+<form>
+  <legend>Add a Movie:</legend>
+  Movie Name:
+  <br>
+  <input type="text" placeholder="name" ng-model="vm.movieAdd.name">
+  <br> Genre:
+  <br>
+<select type="text" placeholder="genre" ng-model="vm.genreAdd.type">
+<option ng-repeat="genre in vm.genre.list" value="{{genre.type}}"></option>
+  </select>
+  <br> Release Date:
+  <br>
+  <input type="number" placeholder="date" ng-model="vm.movieAdd.release_date">
+  <br>Run Time
+  <br>
+  <input type="number" placeholder="runtime" ng-model="vm.movieAdd.run_time">
+  <br>
+  <button ng-click="vm.addMovie(vm.movieAdd)">Add Movie</button>
+</form>
+<div ng-cloak>
+  <md-content class="md-padding" layout="row">
+    <div layout="column-2">
+      <md-card ng-repeat="movie in vm.movies.list" md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">{{movie.name}}</span>
+            <span class="md-subhead">Realeased in {{movie.release_date}}</span>
+            <span class="md-subhead">{{genre.type}}</span>
+            <span class="md-subhead">Run time: {{movie.run_time}} min.</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <img class="md-media-lg card-media" ng-src="styles/images/{{movie.image_url}}"></img>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button class="md-raised md-primary">Genre</md-button>
+          <md-button class="md-warn md-raised md-hue-2">Delete</md-button>
+        </md-card-actions>
+      </md-card>
+    </div>
+  </md-content>
+</div>

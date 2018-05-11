@@ -12,51 +12,43 @@
   <script src="/vendors/angular-route.js"></script>
 
   <!-- Angular Material -->
-  <!-- <link href="vendors/angular-material.css" rel="stylesheet" type="text/css"> -->
-  <!-- <script src="vendors/angular-animate.js" charset="utf-8"></script> -->
-  <!-- <script src="vendors/angular-aria.js" charset="utf-8"></script> -->
-  <!-- <script src="vendors/angular-material.js" charset="utf-8"></script> -->
+ <link href="vendors/angular-material.css" rel="stylesheet" type="text/css">
+  <script src="vendors/angular-animate.js" charset="utf-8"></script>
+  <script src="vendors/angular-aria.js" charset="utf-8"></script>
+  <script src="vendors/angular-material.js" charset="utf-8"></script>
 
   <!-- Client Side -->
   <script src="/scripts/client.js"></script>
 
   <!-- Services -->
-  <!-- <script src="/scripts/services/movie.service.js"></script> -->
+  <script src="/scripts/services/movie.service.js"></script>
 
 <!-- Controllers -->
 <script src="/scripts/controllers/movie.controller.js"></script>
-<!-- <script src="/scripts/controllers/genre.controller.js"></script> -->
+<script src="/scripts/controllers/genre.controller.js"></script>
 
   <!-- CSS -->
   <link rel="stylesheet" href="styles/style.css">
   <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
 </head>
 
-<body>
+<body ng-app="MovieApp">
 
-  <h1>Movie Collection</h1>
+
+<div class="navbar">
+  <ul>
+    <li>
+      <a ng-href="#!/movie">Movie</a>
+    </li>
+    <li>
+      <a ng-href="#!/genre">Genre</a>
+    </li>
+  </ul>
+</div>
   <form>
-    <fieldset>
-      <legend>Add a Movie:</legend>
-      Movie Name:
-      <br>
-      <input type="text" name="firstname" value="">
-      <br> Genre:
-      <br>
-      <input type="text" name="lastname" value="">
-      <br> Date:
-      <br>
-      <input type="date" name="date">
-      <br>Run Time
-      <br>
-      <input type="number" name="runtime" value="">
-      <br>
-      <br>
-      <input type="submit" value="Submit">
-    </fieldset>
-  </form>
 
 
+<ng-view></ng-view>
 </body>
 
 </html>

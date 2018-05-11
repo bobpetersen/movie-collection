@@ -1,0 +1,21 @@
+<!-- <form name="genreForm">
+    <md-input-container>
+
+        <label>Add Genre</label>
+        <input name="AddGenre" ng-model="vm.genreAdd.type" required>
+        <div ng-messages="colorForm.favoriteColor.$error">
+            <div ng-message="required"></div>
+            <md-button ng-click="vm.addGenre(vm.GenreAdd)" class="md-raised md-primary">Primary</md-button>
+            <md-button ng-click="vm.addGenre(vm.GenreAdd)">Add Movie</md-button>
+
+        </div>
+    </md-input-container>
+</form> -->
+<h1>Manage Genres</h1>
+<form>
+    <legend>ADD A GENRE:</legend>
+    <input type="text" placeholder="genre" ng-model="vm.genreAdd.type">
+    <br>
+    <br>
+    <button ng-click="vm.addGenre(vm.genreAdd)">Add Genre</button>
+</form>

@@ -8,8 +8,10 @@ Angular Extended Weekend Project
 [X] add above SQL queries to readme
 [X] create server, public folder, add vendor JS files        and serve up static HTML file
 [X] create HTML form for submitting a movie
-[ ] create app controller
-[ ] create POST route for submitting movies - will include SQL INSERT query
+[X] create app controller for movies
+[X] create POST route for submitting movies - will include SQL INSERT query
+[ ] create app controller for genres
+[ ] create POST route for submitting genres - will include SQL INSERT query
 [ ] create a GET route that returns all movies
 [ ] display movies on the DOM in an HTML table
 [ ] add DELETE movie functionality and route
