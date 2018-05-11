@@ -19,3 +19,26 @@
     <br>
     <button ng-click="vm.addGenre(vm.genreAdd)">Add Genre</button>
 </form>
+<div ng-cloak>
+    <md-content class="md-padding" layout="row">
+        <div layout="column-2">
+            <md-card ng-repeat="genre in vm.genre.list" md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+                <md-card-title>
+                    <md-card-title-text>
+                        <!-- <span class="md-headline">{{movie.name}}</span> -->
+                        <!-- <span class="md-subhead">Realeased in {{movie.release_date}}</span> -->
+                        <span class="md-headline">{{genre.type}}</span>
+                        <!-- <span class="md-subhead">Run time: {{movie.run_time}} min.</span> -->
+                    </md-card-title-text>
+                    <!-- <md-card-title-media>
+                        <img class="md-media-lg card-media" ng-src="styles/images/{{movie.image_url}}"></img>
+                    </md-card-title-media> -->
+                    </md-card-title>
+                    <md-card-actions layout="row" layout-align="end center">
+                    <!-- <md-button class="md-raised md-primary">Genre</md-button> -->
+<md-button class="md-warn md-raised md-hue-2" ng-click="vm.deleteGenre(genre.id)">Delete</md-button>
+                </md-card-actions>
+            </md-card>
+        </div>
+    </md-content>
+</div>
