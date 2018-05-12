@@ -19,7 +19,7 @@ router.post('/', (req, res) => {
 
 router.get('/', (req, res) => {
     console.log('GET /genre router');
-    let queryText = `SELECT * FROM "genre" ORDER BY "id" DESC;`;
+    let queryText = `SELECT * FROM "genre" ORDER BY "type" ASC;`;
     pool.query(queryText)
         .then((results) => {
             res.send(results.rows);

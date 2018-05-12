@@ -1,9 +1,35 @@
 app.controller('MovieController', ['MovieService', '$mdDialog', '$http', function (MovieService, $mdDialog, $http) {
   console.log('MovieController has been loaded');
   const self = this;
+
+self.newMovie = {
+  name:'',
+  genre_id:'',
+  release_date:'',
+  run_time:'',
+  image_url:'',
+};
+
   self.movies = {
     list: []
   };
+  self.genre = {
+    list: []
+  };
+  self.getGenre = function () {
+    $http({
+        method: 'GET',
+        url: '/genre'
+      }).then((response) => {
+        console.log('response', response);
+        self.genre.list = response.data;
+      })
+      .catch((error) => {
+        console.log('error making genre GET', error);
+        alert('Something went wrong! Check the server.');
+      });
+  }
+  
 
   // self.movies = MovieService.movie;
   // self.addMovie = MovieService.addMovie;
@@ -13,12 +39,12 @@ app.controller('MovieController', ['MovieService', '$mdDialog', '$http', functio
   // }
   // self.taco = 'anything at all';
 
-  self.addMovie = function (movieAdd) {
-    console.log('addMovie', movieAdd);
+  self.addMovie = function () {
+    console.log('addMovie', self.newMovie);
     $http({
       method: 'POST',
       url: '/movie',
-      data: movieAdd
+      data: self.newMovie
     }).then((response) => {
       alert('Success!');
       self.getMovies();
@@ -41,5 +67,6 @@ app.controller('MovieController', ['MovieService', '$mdDialog', '$http', functio
         alert('Something went wrong! Check the server.');
       });
   }
+  self.getGenre();
   self.getMovies();
 }]);

@@ -10,14 +10,15 @@ Angular Extended Weekend Project
 [X] create HTML form for submitting a movie
 [X] create app controller for movies
 [X] create POST route for submitting movies - will include SQL INSERT query
-[ ] create app controller for genres
-[ ] create POST route for submitting genres - will include SQL INSERT query
-[ ] create a GET route that returns all movies
+[X] create app controller for genres
+[X] create POST route for submitting genres - will include SQL INSERT query
+[X] create a GET route that returns all movies
 [ ] display movies on the DOM in an HTML table
-[ ] add DELETE movie functionality and route
-[ ] add client side routing
-[ ] add HTML form to submit a genre
-[ ] display a list of all genres with ability to DELETE a 'not in use' genre
+[ ] display genre on movie card
+[X] add DELETE movie functionality and route
+[X] add client side routing
+[X] add HTML form to submit a genre
+[X] display a list of all genres with ability to DELETE a 'not in use' genre
 
 
 
