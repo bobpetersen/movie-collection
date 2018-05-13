@@ -31,6 +31,8 @@ router.get('/', (req, res) => {
         });
 });
 
+
+
 router.delete('/:id', (req, res) => {
     console.log(req.params);
     const genre_id = req.params.id;

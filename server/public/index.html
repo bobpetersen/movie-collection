@@ -12,7 +12,7 @@
   <script src="/vendors/angular-route.js"></script>
 
   <!-- Angular Material -->
- <link href="vendors/angular-material.css" rel="stylesheet" type="text/css">
+  <!-- <link href="vendors/angular-material.css" rel="stylesheet" type="text/css"> -->
   <script src="vendors/angular-animate.js" charset="utf-8"></script>
   <script src="vendors/angular-aria.js" charset="utf-8"></script>
   <script src="vendors/angular-material.js" charset="utf-8"></script>
@@ -23,33 +23,35 @@
   <!-- Services -->
   <script src="/scripts/services/movie.service.js"></script>
 
-<!-- Controllers -->
-<script src="/scripts/controllers/movie.controller.js"></script>
-<script src="/scripts/controllers/genre.controller.js"></script>
+  <!-- Controllers -->
+  <script src="/scripts/controllers/movie.controller.js"></script>
+  <script src="/scripts/controllers/genre.controller.js"></script>
 
   <!-- CSS -->
   <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="vendors/bootstrap.bundle.min.js">
   <link rel="stylesheet" href="styles/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/angular-material.css">
   <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
 </head>
 
 <body ng-app="MovieApp">
-
-
-<div class="navbar">
-  <ul>
-    <li>
-      <a ng-href="#!/movie">Movie</a>
-    </li>
-    <li>
-      <a ng-href="#!/genre">Genre</a>
-    </li>
-  </ul>
-</div>
-  <form>
-
-
-<ng-view></ng-view>
+  <div class="navBar" layout-padding class="bg-dark-blue nav-dark" ng-cloak>
+    <md-content class="navBar" class="md-padding">
+      <md-nav-bar>
+        <span>
+          <h1>MOVIES</h1>
+        </span>
+        <md-nav-item md-nav-href="#!/movie" name="page1">
+          <h5>Add Movies</h5>
+        </md-nav-item>
+        <md-nav-item md-nav-href="#!/genre" name="page2" ng-disabled="secondTabDisabled">
+          <h5>Manage Genres</h5>
+        </md-nav-item>
+      </md-nav-bar>
+    </md-content>
+  </div>
+  <ng-view></ng-view>
 </body>
 
 </html>

@@ -1,44 +1,27 @@
-<!-- <form name="genreForm">
-    <md-input-container>
-
-        <label>Add Genre</label>
-        <input name="AddGenre" ng-model="vm.genreAdd.type" required>
-        <div ng-messages="colorForm.favoriteColor.$error">
-            <div ng-message="required"></div>
-            <md-button ng-click="vm.addGenre(vm.GenreAdd)" class="md-raised md-primary">Primary</md-button>
-            <md-button ng-click="vm.addGenre(vm.GenreAdd)">Add Movie</md-button>
-
-        </div>
-    </md-input-container>
-</form> -->
-<h1>Manage Genres</h1>
+<br>
 <form>
-    <legend>ADD A GENRE:</legend>
-    <input type="text" placeholder="genre" ng-model="vm.genreAdd.type">
-    <br>
-    <br>
-    <button ng-click="vm.addGenre(vm.genreAdd)">Add Genre</button>
+    <div class="row">
+        <div class="col">
+            <input type="text" placeholder="genre" ng-model="vm.genreAdd.type">
+            <button ng-click="vm.addGenre(vm.genreAdd)">Add Genre</button>
+        </div>
+    </div>
 </form>
-<div ng-cloak>
-    <md-content class="md-padding" layout="row">
-        <div layout="column">
-            <md-card ng-repeat="genre in vm.genre.list" md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+<br>
+<div layout="row" layout-margin>
+    <div flex>
+        <md-content class="md-padding"  layout="row" layout-wrap>
+            <md-card ng-repeat="count in vm.getCountGenre.count" md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}">
                 <md-card-title>
                     <md-card-title-text>
-                        <!-- <span class="md-headline">{{movie.name}}</span> -->
-                        <!-- <span class="md-subhead">Realeased in {{movie.release_date}}</span> -->
-                        <span class="md-headline">{{genre.type}}</span>
-                        <!-- <span class="md-subhead">Run time: {{movie.run_time}} min.</span> -->
+                        <span class="md-headline">{{count.type}}</span>
+                        <span class="md-subhead">{{count.count}} movies in this category.</span>
                     </md-card-title-text>
-                    <!-- <md-card-title-media>
-                        <img class="md-media-lg card-media" ng-src="styles/images/{{movie.image_url}}"></img>
-                    </md-card-title-media> -->
-                    </md-card-title>
-                    <md-card-actions layout="row" layout-align="end center">
-                    <!-- <md-button class="md-raised md-primary">Genre</md-button> -->
-<md-button class="md-warn md-raised md-hue-2" ng-click="vm.deleteGenre(genre.id)">Delete</md-button>
+                </md-card-title>
+                <md-card-actions layout="col" layout-align="center">
+                    <md-button class="md-warn md-raised md-hue-2" ng-click="vm.deleteGenre(count)">Delete</md-button>
                 </md-card-actions>
             </md-card>
-        </div>
-    </md-content>
+        </md-content>
+    </div>
 </div>

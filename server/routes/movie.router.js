@@ -24,7 +24,7 @@ router.post('/', (req, res) => {
 // GET /movie
 router.get('/', (req, res) => {
 	console.log('GET /movie router');
-	let queryText = `SELECT "movies".*, "genre"."type"
+	let queryText = `SELECT "movies".*, "genre"."type", "genre"."id"
 					 FROM "genre"
 					 JOIN "movies"
 					 ON "genre"."id" = "movies"."genre_id"
