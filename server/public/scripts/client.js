@@ -18,4 +18,6 @@ app.config(['$routeProvider', function ($routeProvider) {
         .otherwise({
             template: '<h1>404</h1>'
         });
+        // $mdThemingProvider.theme('default')
+        // .dark();
 }]);

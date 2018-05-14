@@ -4,7 +4,7 @@
 		<label>Movie Name</label>
 		<input ng-model="vm.newMovie.name">
 	</md-input-container>
-<md-input-container name="movieGenre" class="md-block" flex-gt-sm="">
+	<md-input-container name="movieGenre" class="md-block" flex-gt-sm="">
 		<label>Genre</label>
 		<md-select ng-model="vm.newMovie.genre_id">
 			<md-option ng-repeat="genre in vm.genre.list" value="{{genre.id}}">
@@ -12,48 +12,22 @@
 			</md-option>
 		</md-select>
 	</md-input-container>
-
-<md-input-container name="movieDate" class="md-block" flex-gt-sm="">
+	<md-input-container name="movieDate" class="md-block" flex-gt-sm="">
 		<label>Release Date</label>
-<input type="number" ng-model="vm.newMovie.release_date">
+		<input type="number" ng-model="vm.newMovie.release_date">
 	</md-input-container>
-<md-input-container name="movieTime" class="md-block" flex-gt-sm="">
+	<md-input-container name="movieTime" class="md-block" flex-gt-sm="">
 		<label>Run Time</label>
-<input type="number" ng-model="vm.newMovie.run_time">
+		<input type="number" ng-model="vm.newMovie.run_time">
 	</md-input-container>
-<div>
-<md-button type="button" ng-click="vm.getImage()">Submit</md-button>
-</div>
-	
-</div>
-<!-- <form>
-	<div class="row">
-		<div class="col">
-			<input type="text" class="form-control" "form-control-lg" placeholder="name" ng-model="vm.newMovie.name">
-		</div>
-		<div class="col">
-			<select ng-model="vm.newMovie.genre_id">
-				<option ng-repeat="genre in vm.genre.list" value="{{genre.id}}">{{genre.type}}</option>
-			</select>
-		</div>
-		<div class="col">
-			<input class="form-control" "form-control-lg" type="number" placeholder="date" ng-model="vm.newMovie.release_date">
-		</div>
-		<div class="col">
-			<input class="form-control" "form-control-lg" type="number" placeholder="runtime" ng-model="vm.newMovie.run_time">
-		</div>
-		<div class="col">
-				<input class="form-control" "form-control-lg" type="text" placeholder="image" ng-model="vm.newMovie.image_url">
-			</div>
-		<div class="col">
-			<button type="button" class="btn btn-primary" ng-click="vm.getImage()">Add Movie</button>
-		</div>
+	<div>
+		<md-button type="button" ng-click="vm.getImage()">Submit</md-button>
 	</div>
-</form> -->
+</div>
 <br>
 <div>
 	<md-content class="md-padding" layout="row" layout-wrap>
-		<md-card ng-repeat="movie in vm.movies.list" >
+		<md-card ng-repeat="movie in vm.movies.list">
 			<img class="md-media-xl card-media" ng-src="{{movie.image_url}}"></img>
 			<md-card-title>
 				<md-card-title-text>
